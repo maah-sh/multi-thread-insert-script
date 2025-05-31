@@ -22,7 +22,7 @@ def create_table_personal_info():
 
 
 def insert_to_personal_info(row):
-    # with lock:
+    with lock:
         with sqlite3.connect('db.sqlite3') as conn:
             insert_statement = ''' INSERT INTO personal_info(first_name,last_name,age)
                     VALUES(?,?,?) '''
